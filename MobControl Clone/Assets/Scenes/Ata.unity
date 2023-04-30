@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -997,7 +997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1895748050}
-  bulletPrefab: {fileID: 3998635847120301519, guid: 422220dbb21e12e409a1aaf6c3de23ed, type: 3}
+  bulletPrefab: {fileID: 7759689178159521663, guid: e10bf244082f8114b8816cc1a7fbd02f, type: 3}
   ultBulletPrefab: {fileID: 634499619264712612, guid: 5813c865a611cef48a48d0411b9a3d9a, type: 3}
   fireCd: 0.3
   chargeBar: {fileID: 2095693151}
