@@ -1931,10 +1931,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f5054e6420569439dbefb26ae66ca8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  damage: 50
+  health: 4
+  damage: 2
   fireCd: 1
-  moveSpeed: 6
+  moveSpeed: 15
   target: {fileID: 0}
 --- !u!1 &7881680452879754333
 GameObject:

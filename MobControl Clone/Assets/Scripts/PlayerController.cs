@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private float moveSpeed;
     [SerializeField] private Transform target;
+
+    public GameObject cloneSource = null;
+
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("EnemyCastle").transform;
@@ -64,6 +67,7 @@ public class PlayerController : MonoBehaviour
             other.gameObject.GetComponent<EnemyCastleScript>().getHit(damage);
             fireTimer = fireCd;
         }
+        
     }
 
 

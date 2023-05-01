@@ -46,7 +46,7 @@ public class EnemyController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player") && fireTimer<=0){
-            collision.gameObject.GetComponent<PlayerController>().getHit(50);
+            collision.gameObject.GetComponent<PlayerController>().getHit(damage);
             fireTimer = fireCd;
         }
         if (collision.gameObject.CompareTag("PlayerCastle") && fireTimer <= 0)
