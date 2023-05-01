@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     [Header("Health Controller")]
-    [SerializeField] int health = 100;
-    [SerializeField] int damage = 50;
+    [SerializeField] int health = 4;
+    [SerializeField] int damage = 2;
 
     [SerializeField] float fireCd;
     private float fireTimer;
@@ -52,6 +52,14 @@ public class EnemyController : MonoBehaviour
         if (collision.gameObject.CompareTag("PlayerCastle") && fireTimer <= 0)
         {
             
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("SpeedReducePoint"))
+        {
+
+            moveSpeed = 6;
         }
     }
 }
