@@ -1865,7 +1865,7 @@ GameObject:
   - component: {fileID: 7759689178159521633}
   - component: {fileID: 5930214391607908824}
   - component: {fileID: 615112454339041655}
-  - component: {fileID: -5659318225167188610}
+  - component: {fileID: -2921724123732379204}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1919,7 +1919,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!114 &-5659318225167188610
+--- !u!114 &-2921724123732379204
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

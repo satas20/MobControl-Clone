@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
+
     [Header("Health Controller")]
     [SerializeField] int health = 100;
     [SerializeField] int damage = 50;
@@ -51,4 +53,6 @@ public class PlayerController : MonoBehaviour
             fireTimer = fireCd;
         }
     }
+
+
 }
