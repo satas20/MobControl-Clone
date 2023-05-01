@@ -8,6 +8,8 @@ public class EnemyCastleScript : MonoBehaviour
     [SerializeField] int health = 100;
     [SerializeField] Transform spawnPoint;
     [SerializeField] GameObject enemy;
+    [SerializeField] Vector3[] ss;
+
     [SerializeField] TextMeshProUGUI health_text;
     public class EnemySpawnEvents 
     {

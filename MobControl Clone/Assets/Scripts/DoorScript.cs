@@ -48,7 +48,6 @@ public class DoorScript : MonoBehaviour
                     player.GetComponent<PlayerController>().cloneSource = gameObject;
                     Instantiate(player, newSpawnPoint, Quaternion.identity);
                 }
-            
             }
         }
     }

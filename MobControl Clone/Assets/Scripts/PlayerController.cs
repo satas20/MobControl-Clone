@@ -32,7 +32,6 @@ public class PlayerController : MonoBehaviour
         fireTimer -= Time.deltaTime;
         gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         MoveForward();
-
         if (health <= 0)
         {
             Destroy(gameObject);
