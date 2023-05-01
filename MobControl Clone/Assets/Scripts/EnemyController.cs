@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
     [Header("Health Controller")]
     [SerializeField] int health = 100;
@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("EnemyCastle").transform;
+        target = GameObject.FindGameObjectWithTag("PlayerCastle").transform;
         target.position -= new Vector3(0, target.position.y, 0);
 
     }
@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        fireTimer -= Time.deltaTime;
+        fireTimer -= Time.deltaTime; 
         gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         MoveForward();
 
@@ -42,13 +42,16 @@ public class PlayerController : MonoBehaviour
     {
         health -= damage;
     }
-
+    
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") && fireTimer <= 0)
-        {
-            collision.gameObject.GetComponent<EnemyController>().getHit(50);
+        if (collision.gameObject.CompareTag("Player") && fireTimer<=0){
+            collision.gameObject.GetComponent<PlayerController>().getHit(50);
             fireTimer = fireCd;
+        }
+        if (collision.gameObject.CompareTag("PlayerCastle") && fireTimer <= 0)
+        {
+            
         }
     }
 }

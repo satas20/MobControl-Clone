@@ -1863,12 +1863,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7759689178159521633}
+  - component: {fileID: 1793297109994496297}
   - component: {fileID: 5930214391607908824}
   - component: {fileID: 615112454339041655}
-  - component: {fileID: -5659318225167188610}
   m_Layer: 0
-  m_Name: Player
-  m_TagString: Player
+  m_Name: Enemy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1889,6 +1889,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1793297109994496297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7759689178159521663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ee641e94a845a040951305048265c58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  damage: 50
+  fireCd: 1
+  moveSpeed: 6
+  target: {fileID: 0}
 --- !u!136 &5930214391607908824
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1919,23 +1936,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!114 &-5659318225167188610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7759689178159521663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4f5054e6420569439dbefb26ae66ca8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  damage: 50
-  fireCd: 1
-  moveSpeed: 6
-  target: {fileID: 0}
 --- !u!1 &7881680452879754333
 GameObject:
   m_ObjectHideFlags: 0
@@ -2148,7 +2148,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2bd258b6c63c9724eb89fc1907df912c, type: 2}
+  - {fileID: 2100000, guid: d3e4d67fc87dce74e81aea4a8ea4b453, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

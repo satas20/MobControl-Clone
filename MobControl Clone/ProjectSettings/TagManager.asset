@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - EnemyCastle
+  - PlayerCastle
+  - Enemy
+  - Dor
   layers:
   - Default
   - TransparentFX
