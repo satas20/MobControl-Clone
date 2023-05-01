@@ -47,7 +47,7 @@ public class Shooting : MonoBehaviour
     {
         if (currentCharge < chargeAmount) { chargeBar.color = new Color32(33, 128, 231, 255); }
         else { chargeBar.color = new Color32(247, 166, 2, 255); }
-        chargeBar.fillAmount = (currentCharge / chargeAmount) + 0.08f;
+        chargeBar.fillAmount = (currentCharge / chargeAmount);
     }
     private void Shoot()
     {
@@ -57,6 +57,6 @@ public class Shooting : MonoBehaviour
     private void ShootUlt()
     {
         GameObject bullet = Instantiate(ultBulletPrefab, firePoint.position, Quaternion.identity);
-        bullet.GetComponent<Rigidbody>().AddForce(new Vector3(0, 0, 30), ForceMode.Impulse);
+        //bullet.GetComponent<Rigidbody>().AddForce(new Vector3(0, 0, 30), ForceMode.Impulse);
     }
 }

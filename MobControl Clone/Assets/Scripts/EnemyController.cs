@@ -5,21 +5,27 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     [Header("Health Controller")]
-    [SerializeField] int health = 4;
-    [SerializeField] int damage = 2;
+    
+    [SerializeField] int maxHealth;
+    private int health;
+    
+    [SerializeField] int damage ;
 
     [SerializeField] float fireCd;
     private float fireTimer;
 
     [Header("Settings")]
     [SerializeField] private float moveSpeed;
-    [SerializeField] private Transform target;
+     private Transform target;
 
+    [SerializeField] bool isBig;
+    private Vector3 startScale;
     void Start()
     {
+        health = maxHealth;
         target = GameObject.FindGameObjectWithTag("PlayerCastle").transform;
         target.position -= new Vector3(0, target.position.y, 0);
-
+        startScale = transform.localScale;
     }
 
     // Update is called once per frame
@@ -41,6 +47,10 @@ public class EnemyController : MonoBehaviour
     public void getHit(int damage)
     {
         health -= damage;
+        if (isBig)
+        {
+            transform.localScale = startScale * health / maxHealth;
+        }
     }
     
     private void OnCollisionEnter(Collision collision)

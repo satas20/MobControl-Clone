@@ -1901,11 +1901,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ee641e94a845a040951305048265c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 4
+  maxHealth: 4
   damage: 2
   fireCd: 1
   moveSpeed: 15
-  target: {fileID: 0}
+  isBig: 0
 --- !u!136 &5930214391607908824
 CapsuleCollider:
   m_ObjectHideFlags: 0

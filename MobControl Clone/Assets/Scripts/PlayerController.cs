@@ -7,28 +7,35 @@ public class PlayerController : MonoBehaviour
 
 
     [Header("Health Controller")]
-    [SerializeField] int health = 4;
-    [SerializeField] int damage = 2;
+    [SerializeField] int maxHealth;
+    private int health ;
+
+    [SerializeField] int damage ;
 
     [SerializeField] float fireCd;
     private float fireTimer;
 
     [Header("Settings")]
     [SerializeField] private float moveSpeed;
-    [SerializeField] private Transform target;
-
+    private Vector3 target;
+    private GameObject[] allTargets;
     public GameObject cloneSource = null;
 
+    [SerializeField] bool isBig;
+    private Vector3 startScale;
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("EnemyCastle").transform;
-        target.position -= new Vector3(0, target.position.y, 0);
-        
+       
+        health = maxHealth;
+        startScale = transform.localScale;
     }
 
     // Update is called once per frame
     void Update()
     {
+        allTargets = GameObject.FindGameObjectsWithTag("EnemyCastle");
+        target = closestTarget().transform.position;
+        target.y = 0;
         fireTimer -= Time.deltaTime;
         gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         MoveForward();
@@ -39,13 +46,38 @@ public class PlayerController : MonoBehaviour
     }
     private void MoveForward()
     {   
-        transform.position = Vector3.MoveTowards(transform.position, target.position, Time.deltaTime * moveSpeed);
+        transform.position = Vector3.MoveTowards(transform.position, target, Time.deltaTime * moveSpeed);
     }
     public void getHit(int damage)
     {
         health -= damage;
+        if (isBig)
+        {
+            
+            transform.localScale = startScale*health / maxHealth;
+        }
     }
 
+    private GameObject closestTarget()
+    {
+
+        GameObject closestHere = gameObject;
+        float leastDistance = Mathf.Infinity;
+
+        foreach (var target in allTargets)
+        {
+
+            float distanceHere = Vector3.Distance(transform.position, target.transform.position);
+
+            if (distanceHere < leastDistance)
+            {
+                leastDistance = distanceHere;
+                closestHere = target;
+            }
+
+        }
+        return closestHere;
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy") && fireTimer <= 0)
