@@ -367,10 +367,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f5054e6420569439dbefb26ae66ca8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 150
-  damage: 100
-  fireCd: 1.5
-  moveSpeed: 6
+  health: 8
+  damage: 4
+  fireCd: 1
+  moveSpeed: 15
   target: {fileID: 0}
 --- !u!54 &1233466201710250097
 Rigidbody:

@@ -7,8 +7,8 @@ public class PlayerController : MonoBehaviour
 
 
     [Header("Health Controller")]
-    [SerializeField] int health = 100;
-    [SerializeField] int damage = 50;
+    [SerializeField] int health = 4;
+    [SerializeField] int damage = 2;
 
     [SerializeField] float fireCd;
     private float fireTimer;
@@ -16,12 +16,11 @@ public class PlayerController : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private float moveSpeed;
     [SerializeField] private Transform target;
-
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("EnemyCastle").transform;
         target.position -= new Vector3(0, target.position.y, 0);
-
+        
     }
 
     // Update is called once per frame
@@ -37,7 +36,7 @@ public class PlayerController : MonoBehaviour
         }
     }
     private void MoveForward()
-    {
+    {   
         transform.position = Vector3.MoveTowards(transform.position, target.position, Time.deltaTime * moveSpeed);
     }
     public void getHit(int damage)
@@ -49,7 +48,20 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy") && fireTimer <= 0)
         {
-            collision.gameObject.GetComponent<EnemyController>().getHit(50);
+            collision.gameObject.GetComponent<EnemyController>().getHit(damage);
+            fireTimer = fireCd;
+        }
+       
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("SpeedReducePoint")){
+
+            moveSpeed = 6;
+        }
+        if (other.gameObject.CompareTag("EnemyCastle") && fireTimer <= 0)
+        {
+            other.gameObject.GetComponent<EnemyCastleScript>().getHit(damage);
             fireTimer = fireCd;
         }
     }

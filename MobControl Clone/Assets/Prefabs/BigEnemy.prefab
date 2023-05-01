@@ -329,9 +329,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1233466201710250111}
+  - component: {fileID: 8152960089396609486}
   - component: {fileID: 1233466201710250097}
   - component: {fileID: 1233466201710250098}
-  - component: {fileID: 8152960089396609486}
   m_Layer: 0
   m_Name: BigEnemy
   m_TagString: Enemy
@@ -355,6 +355,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8152960089396609486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233466201710250099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ee641e94a845a040951305048265c58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 8
+  damage: 4
+  fireCd: 1
+  moveSpeed: 15
+  target: {fileID: 0}
 --- !u!54 &1233466201710250097
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -385,23 +402,6 @@ CapsuleCollider:
   m_Height: 8.5
   m_Direction: 1
   m_Center: {x: 0, y: 5, z: 0.5}
---- !u!114 &8152960089396609486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1233466201710250099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ee641e94a845a040951305048265c58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 150
-  damage: 100
-  fireCd: 1
-  moveSpeed: 6
-  target: {fileID: 0}
 --- !u!1 &1396816671543806348
 GameObject:
   m_ObjectHideFlags: 0

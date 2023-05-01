@@ -8,6 +8,7 @@ TagManager:
   - PlayerCastle
   - Enemy
   - Dor
+  - SpeedReducePoint
   layers:
   - Default
   - TransparentFX
