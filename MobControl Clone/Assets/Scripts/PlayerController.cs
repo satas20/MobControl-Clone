@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     [Header("Health Controller")]
     [SerializeField] int maxHealth;
     private int health ;
-
+    private bool isReachedCheckPoint;
     [SerializeField] int damage ;
 
     [SerializeField] float fireCd;
@@ -45,8 +45,15 @@ public class PlayerController : MonoBehaviour
         }
     }
     private void MoveForward()
-    {   
-        transform.position = Vector3.MoveTowards(transform.position, target, Time.deltaTime * moveSpeed);
+    {
+        if (isReachedCheckPoint){
+            transform.position = Vector3.MoveTowards(transform.position, target, Time.deltaTime * moveSpeed);
+        }
+        else
+        {
+            target.x = transform.position.x;
+            transform.position = Vector3.MoveTowards(transform.position, target, Time.deltaTime * moveSpeed);
+        }
     }
     public void getHit(int damage)
     {
@@ -92,6 +99,10 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("SpeedReducePoint")){
 
             moveSpeed = 6;
+        }
+        if (other.gameObject.CompareTag("CheckPoint"))
+        {
+            isReachedCheckPoint = true;
         }
         if (other.gameObject.CompareTag("EnemyCastle") && fireTimer <= 0)
         {
