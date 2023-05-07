@@ -8,9 +8,9 @@ public class PlayerController : MonoBehaviour
 
     [Header("Health Controller")]
     [SerializeField] int maxHealth;
-    private int health ;
+    private int health;
     private bool isReachedCheckPoint;
-    [SerializeField] int damage ;
+    [SerializeField] int damage;
 
     [SerializeField] float fireCd;
     private float fireTimer;
@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 startScale;
     void Start()
     {
-       
+
         health = maxHealth;
         startScale = transform.localScale;
     }
@@ -46,7 +46,8 @@ public class PlayerController : MonoBehaviour
     }
     private void MoveForward()
     {
-        if (isReachedCheckPoint){
+        if (isReachedCheckPoint)
+        {
             transform.position = Vector3.MoveTowards(transform.position, target, Time.deltaTime * moveSpeed);
         }
         else
@@ -60,8 +61,8 @@ public class PlayerController : MonoBehaviour
         health -= damage;
         if (isBig)
         {
-            
-            transform.localScale = startScale*health / maxHealth;
+
+            transform.localScale = startScale * health / maxHealth;
         }
     }
 
@@ -89,14 +90,16 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy") && fireTimer <= 0)
         {
+            ScoreScript.scoreValue += 2;
             collision.gameObject.GetComponent<EnemyController>().getHit(damage);
             fireTimer = fireCd;
         }
-       
+
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("SpeedReducePoint")){
+        if (other.gameObject.CompareTag("SpeedReducePoint"))
+        {
 
             moveSpeed = 6;
         }
@@ -109,7 +112,7 @@ public class PlayerController : MonoBehaviour
             other.gameObject.GetComponent<EnemyCastleScript>().getHit(damage);
             fireTimer = fireCd;
         }
-        
+
     }
 
 

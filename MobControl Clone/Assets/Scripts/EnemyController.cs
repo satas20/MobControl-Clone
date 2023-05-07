@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-
+    [SerializeField] private ParticleSystem enemyParticular;
 
 
     [Header("Health Controller")]
-    
+
     [SerializeField] int maxHealth;
     private int health;
-    
-    [SerializeField] int damage ;
+
+    [SerializeField] int damage;
 
     [SerializeField] float fireCd;
     private float fireTimer;
 
     [Header("Settings")]
     [SerializeField] private float moveSpeed;
-     private Transform target;
+    private Transform target;
 
     [SerializeField] bool isBig;
     private Vector3 startScale;
@@ -51,9 +51,12 @@ public class EnemyController : MonoBehaviour
     public void getHit(int damage)
     {
         health -= damage;
+        EnemyHitEffect();
+
         if (isBig)
         {
             transform.localScale = startScale * health / maxHealth;
+            EnemyHitEffect();
         }
     }
 
@@ -77,6 +80,10 @@ public class EnemyController : MonoBehaviour
 
             moveSpeed = 6;
         }
+    }
+    private void EnemyHitEffect()
+    {
+        enemyParticular.Play();
     }
 
 }
