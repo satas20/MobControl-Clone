@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawnEvents: ScriptableObject
+
+[System.Serializable] public class EnemySpawnEvents
 {
     public int enemyAmount;
     public int bigEnemyAmount;

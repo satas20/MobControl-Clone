@@ -367,11 +367,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f5054e6420569439dbefb26ae66ca8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 8
+  maxHealth: 10
+  health: 10
   damage: 4
   fireCd: 1
   moveSpeed: 15
-  target: {fileID: 0}
+  target: {x: 0, y: 0, z: 0}
+  cloneSource: {fileID: 0}
+  isBig: 1
 --- !u!54 &1233466201710250097
 Rigidbody:
   m_ObjectHideFlags: 0
