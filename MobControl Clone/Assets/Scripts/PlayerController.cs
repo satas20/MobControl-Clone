@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
 
@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         allTargets = GameObject.FindGameObjectsWithTag("EnemyCastle");
         target = closestTarget().transform.position;
         target.y = 0;
@@ -43,6 +44,7 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
     }
     private void MoveForward()
     {

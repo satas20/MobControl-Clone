@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyController : MonoBehaviour
 {
@@ -79,6 +80,12 @@ public class EnemyController : MonoBehaviour
         {
 
             moveSpeed = 6;
+        }
+        if (other.gameObject.CompareTag("EndGame"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+         
+
         }
     }
     private void EnemyHitEffect()

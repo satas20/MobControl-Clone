@@ -367,6 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ee641e94a845a040951305048265c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyParticular: {fileID: 243869579659909720, guid: d24c1ad387924e049913d0eccea24d16, type: 3}
   maxHealth: 10
   damage: 4
   fireCd: 1
