@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
+    [SerializeField] ParticleSystem enemyParticle;
+
+
 
     [Header("Health Controller")]
     [SerializeField] int health = 4;
@@ -23,7 +26,7 @@ public class PlayerController : MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag("EnemyCastle").transform;
         target.position -= new Vector3(0, target.position.y, 0);
-        
+
     }
 
     // Update is called once per frame
@@ -39,36 +42,46 @@ public class PlayerController : MonoBehaviour
         }
     }
     private void MoveForward()
-    {   
+    {
         transform.position = Vector3.MoveTowards(transform.position, target.position, Time.deltaTime * moveSpeed);
     }
     public void getHit(int damage)
     {
         health -= damage;
+        EnemyHitParticular();
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy") && fireTimer <= 0)
         {
+
             collision.gameObject.GetComponent<EnemyController>().getHit(damage);
+
             fireTimer = fireCd;
         }
-       
+
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("SpeedReducePoint")){
+        if (other.gameObject.CompareTag("SpeedReducePoint"))
+        {
 
             moveSpeed = 6;
         }
         if (other.gameObject.CompareTag("EnemyCastle") && fireTimer <= 0)
         {
             other.gameObject.GetComponent<EnemyCastleScript>().getHit(damage);
+
             fireTimer = fireCd;
         }
-        
+
     }
+    private void EnemyHitParticular()
+    {
+        enemyParticle.Play();
+    }
+
 
 
 }
