@@ -20,8 +20,8 @@ There is a 2 example levels in the project.
   <img src="MobControl Clone/Assets/Media/SS3.png" width="250" >
 </p>
 <p align="center">
-  <img src="MobControl Clone/Assets/Media/Lvl1.gif" width="900">
-  <img src="MobControl Clone/Assets/Media/Lvl2.gif" width="900">
+  <img src="MobControl Clone/Assets/Media/Lvl1.gif" width="375">
+  <img src="MobControl Clone/Assets/Media/Lvl2.gif" width="375">
 </p>
 
 [For More Gameplay](https://drive.google.com/drive/u/0/folders/1ESJO5skms8NKmbM_Y-t4btnb_Qev7Jrl)
