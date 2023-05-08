@@ -15,9 +15,9 @@ There is a 2 example levels in the project.
 ## Preview
 
 <p align="center" >
-  <img src="MobControl Clone/Assets/Media/SS1.png" width="300" >
-  <img src="MobControl Clone/Assets/Media/SS2.png" width="300" >
-  <img src="MobControl Clone/Assets/Media/SS3.png" width="300" >
+  <img src="MobControl Clone/Assets/Media/SS1.png" width="250" >
+  <img src="MobControl Clone/Assets/Media/SS2.png" width="250" >
+  <img src="MobControl Clone/Assets/Media/SS3.png" width="250" >
 </p>
 <p align="center">
   <img src="MobControl Clone/Assets/Media/Lvl1.gif" width="900">
